@@ -9,6 +9,7 @@
   --tang: #ff7a3d;
   --pink: #ff9ec9;
   --mint: #7be0b0;
+  --lilac: #cdb4ff;
   --page: var(--peri);
   --display: "Bricolage Grotesque", "Arial Black", Impact, sans-serif;
   --body: "Instrument Sans", "Segoe UI", Roboto, sans-serif;
@@ -20,6 +21,8 @@
 body.p-projets { --page: var(--sun); }
 body.p-parcours { --page: var(--tang); }
 body.p-contact { --page: var(--pink); }
+body.p-cv { --page: var(--mint); }
+body.p-lettre { --page: var(--lilac); }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -312,3 +315,139 @@ form.contact h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.04em; 
 .sf-panel dd { margin: 0; font-weight: 600; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+/* =====================================================================
+   CV & Lettre de motivation : une « feuille » A4 néo-brutaliste
+   ===================================================================== */
+.sheet {
+  max-width: 900px; margin-inline: auto; background: var(--white); color: var(--ink);
+  border: var(--b); border-radius: 20px; box-shadow: 10px 10px 0 var(--ink); overflow: hidden;
+  font-size: 15px; line-height: 1.55;
+}
+.sheet-top {
+  background: var(--page); border-bottom: var(--b); padding: 30px 34px; position: relative;
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 26px; align-items: center;
+}
+.sheet-top .label { display: block; margin-bottom: 6px; }
+.sheet-name { font-size: clamp(2.2rem, 6vw, 3.4rem); font-weight: 800; letter-spacing: -0.05em; line-height: .88; text-transform: uppercase; }
+.sheet-name span { display: block; -webkit-text-stroke: 2px var(--ink); color: transparent; }
+.sheet-role { margin-top: 10px; font-weight: 700; font-size: 1.05rem; }
+.sheet-role mark { background: var(--white); border: 2px solid var(--ink); padding: 0 6px; color: var(--ink); }
+.contact-pills { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 14px 0 0; padding: 0; }
+.contact-pills li { font: 500 .74rem var(--mono); background: var(--white); border: 2px solid var(--ink); border-radius: 999px; padding: 3px 10px; }
+.contact-pills a { text-decoration: none; }
+.sheet-stamp {
+  position: absolute; right: 22px; top: 18px; transform: rotate(6deg);
+  background: var(--ink); color: var(--sun); font: 700 .68rem var(--mono); padding: 5px 10px; border-radius: 6px; text-transform: uppercase;
+}
+.cv-photo {
+  width: 132px; height: 132px; object-fit: cover; object-position: center 20%;
+  border: var(--b); border-radius: 18px; box-shadow: 5px 5px 0 var(--ink); background: var(--bone); transform: rotate(-2deg);
+}
+
+/* Titres de section dans la feuille */
+.s-title {
+  display: flex; align-items: center; gap: 10px; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.s-title .n { font: 700 .7rem var(--mono); background: var(--ink); color: var(--page); border-radius: 6px; padding: 3px 7px; letter-spacing: 0; }
+.s-title::after { content: ""; flex: 1; height: 3px; background: var(--ink); }
+
+/* Corps du CV : colonne latérale + colonne principale */
+.cv-body { display: grid; grid-template-columns: 270px minmax(0, 1fr); }
+.cv-side { background: var(--bone); border-right: var(--b); padding: 26px 24px; display: grid; gap: 24px; align-content: start; }
+.cv-main { padding: 26px 30px 30px; display: grid; gap: 24px; align-content: start; }
+.side-block .sub { font: 500 .68rem var(--mono); text-transform: uppercase; letter-spacing: .08em; margin: 10px 0 6px; opacity: .75; }
+.side-block .sub:first-of-type { margin-top: 0; }
+.side-block .tags li { background: var(--white); font-size: .72rem; }
+.langs { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.langs li { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-weight: 600; font-size: .92rem; }
+.meter { display: inline-flex; gap: 3px; flex-shrink: 0; }
+.meter i { width: 12px; height: 12px; border: 2px solid var(--ink); border-radius: 3px; background: var(--white); }
+.meter i.on { background: var(--ink); }
+.langs small { display: block; font: 500 .68rem var(--mono); opacity: .7; }
+
+.cv-main .lead { font-weight: 500; }
+.mini-log { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; position: relative; }
+.mini-log::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 3px; background: var(--ink); }
+.mini-log li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 12px; align-items: start; }
+.mini-log .dot { width: 19px; height: 19px; border: 3px solid var(--ink); border-radius: 50%; background: var(--c, var(--white)); position: relative; z-index: 1; margin-top: 2px; }
+.mini-log .date { font: 700 .72rem var(--mono); border: 2px solid var(--ink); border-radius: 999px; padding: 1px 8px; background: var(--c, var(--white)); display: inline-block; }
+.mini-log h4 { margin: 4px 0 0; font: 800 1.08rem/1.15 var(--display); letter-spacing: -0.02em; }
+.mini-log p { font-size: .88rem; }
+.mini-log ul { margin: 6px 0 0; padding: 0; list-style: none; display: grid; gap: 2px; font-size: .88rem; }
+.mini-log ul li { display: block; padding-left: 18px; position: relative; }
+.mini-log ul li::before { content: "+"; position: absolute; left: 2px; font: 700 .9rem var(--mono); color: #138a46; }
+
+.mini-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.mini-card { border: var(--b); border-radius: 14px; overflow: hidden; box-shadow: 4px 4px 0 var(--ink); display: flex; flex-direction: column; }
+.mini-card .top { background: var(--c, var(--peri)); border-bottom: var(--b); padding: 10px 14px; }
+.mini-card h4 { margin: 0; font: 800 1.05rem/1.1 var(--display); letter-spacing: -0.02em; }
+.mini-card .body { padding: 10px 14px 12px; display: grid; gap: 8px; font-size: .86rem; flex: 1; align-content: start; }
+.mini-card .body a { font: 700 .78rem var(--mono); }
+.mini-card .tags li { font-size: .68rem; padding: 2px 8px; }
+.cert { border: var(--b); border-radius: 14px; padding: 12px 16px; background: var(--sun); display: grid; gap: 4px; }
+.cert strong { font: 800 .98rem/1.2 var(--display); letter-spacing: -0.01em; }
+.cert p { font-size: .84rem; line-height: 1.45; }
+
+/* Lettre */
+.letter-head { display: block; }
+.letter-head .sheet-name span { display: inline; }
+.letter-wrap { padding: 30px 40px 38px; display: grid; gap: 22px; }
+.letter-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.letter-meta > div { border: 2px solid var(--ink); border-radius: 12px; padding: 10px 14px; background: var(--bone); }
+.letter-meta .label { display: block; opacity: .7; margin-bottom: 2px; }
+.letter-meta strong { font-weight: 700; }
+.objet { border: var(--b); border-radius: 12px; background: var(--page); padding: 12px 16px; font-weight: 600; box-shadow: 4px 4px 0 var(--ink); }
+.objet b { font: 700 .78rem var(--mono); text-transform: uppercase; letter-spacing: .06em; background: var(--ink); color: var(--white); border-radius: 6px; padding: 2px 8px; margin-right: 8px; }
+.letter-body { display: grid; gap: 14px; font-size: .98rem; line-height: 1.7; }
+.letter-body strong { background: var(--page); padding: 0 4px; border: 2px solid var(--ink); }
+.letter-sign { display: flex; justify-content: flex-end; }
+.letter-sign div { text-align: right; }
+.letter-sign .sig { font: 800 1.7rem/1 var(--display); letter-spacing: -0.04em; text-transform: uppercase; margin-top: 4px; }
+
+/* Zone de téléchargement en bas de page */
+.dl-zone { padding-block: clamp(36px, 6vw, 64px) clamp(56px, 8vw, 90px); }
+.dl-card {
+  max-width: 900px; margin-inline: auto; background: var(--ink); color: var(--white); border-radius: 20px;
+  padding: clamp(22px, 4vw, 36px); display: flex; justify-content: space-between; align-items: center; gap: 18px 28px; flex-wrap: wrap;
+}
+.dl-card h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -0.04em; }
+.dl-card h2 span { color: var(--page); }
+.dl-card .label { color: #bbb; display: block; margin-top: 8px; }
+.dl-card .btn { background: var(--page); font-size: 1.05rem; box-shadow: 4px 4px 0 var(--white); border-color: var(--white); }
+.dl-card .btn:hover { box-shadow: 6px 6px 0 var(--white); }
+.dl-card .btn .arrow { display: inline-block; }
+.dl-card .btn:hover .arrow { transform: translateY(3px); }
+
+@media (max-width: 760px) {
+  .sheet-top { grid-template-columns: 1fr; padding: 24px 20px; }
+  .sheet-stamp { position: static; width: fit-content; }
+  .cv-photo { width: 104px; height: 104px; }
+  .cv-body { grid-template-columns: 1fr; }
+  .cv-side { border-right: 0; border-bottom: var(--b); }
+  .cv-main { padding: 24px 20px; }
+  .mini-cards, .letter-meta { grid-template-columns: 1fr; }
+  .letter-wrap { padding: 24px 20px 28px; }
+}
+
+/* Impression / PDF : seule la feuille sort, au format A4 */
+@media print {
+  @page { size: A4; margin: 0; }
+  html { font-size: 12.5px; }
+  html, body { background: var(--white); padding: 0; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .site-head, .page-hero, .site-foot, .sf-bar, .sf-panel, .dl-zone { display: none !important; }
+  main.wrap { padding: 0; max-width: none; }
+  main > .section { padding: 0; display: block; }
+  .sheet { width: 210mm; height: 297mm; max-width: none; margin: 0; border: 0; border-radius: 0; box-shadow: none; font-size: 1rem; display: flex; flex-direction: column; }
+  .sheet-name { font-size: 2.9rem; }
+  .cv-body { flex: 1; grid-template-columns: 228px minmax(0, 1fr); }
+  .cv-side { padding: 22px 20px; gap: 20px; }
+  .cv-main { padding: 22px 26px; gap: 18px; }
+  .letter-head { padding: 34px 46px; }
+  .letter-wrap { padding: 34px 46px; gap: 24px; flex: 1; align-content: start; }
+  .letter-body { font-size: 1.12rem; gap: 16px; line-height: 1.75; }
+  .letter-meta, .objet { font-size: 1.05rem; }
+  .mini-cards { grid-template-columns: 1fr 1fr; }
+  .letter-meta { grid-template-columns: 1fr 1fr; }
+}
