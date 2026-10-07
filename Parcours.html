@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Parcours · Mohamed Amine Mejjiou</title>
+  <meta name="description" content="Formation, alternance et compétences de Mohamed Amine Mejjiou.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-parcours" data-route="app_parcours" data-path="/parcours">
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span>amine.dev</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="Projets.html">Projets</a>
+        <a href="Parcours.html" aria-current="page">Parcours</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <code class="route">$ git log --graph amine/parcours</code>
+      <h1>Parcours</h1>
+      <p>Mon historique, présenté comme un dépôt Git. Le commit le plus récent est en haut.</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section class="section">
+      <ol class="gitlog">
+        <li class="commit c-mint">
+          <span class="node" aria-hidden="true"></span>
+          <div class="box">
+            <div class="head"><span class="hash">a7f3e21</span><span class="ref head-ref">HEAD → main</span><span>2026 – 2027</span></div>
+            <div class="content">
+              <h3>feat: cherche une alternance en 2ᵉ année</h3>
+              <p class="where">Orléans + 20 km · 1 ou 2 ans</p>
+              <p>Je cherche une entreprise pour continuer ma formation sur un rythme de 1 semaine à l'école et 3 semaines chez vous.</p>
+            </div>
+          </div>
+        </li>
+        <li class="commit c-sun">
+          <span class="node" aria-hidden="true"></span>
+          <div class="box">
+            <div class="head"><span class="hash">4c19b08</span><span class="ref">formation</span><span>En cours</span></div>
+            <div class="content">
+              <h3>feat: Développeur Web et Web Mobile</h3>
+              <p class="where">École Coda · Titre RNCP niveau 5</p>
+              <ul>
+                <li>Front : maquettes, interfaces responsives, JavaScript, React</li>
+                <li>Back : bases de données, API REST, applications sécurisées</li>
+                <li>Examens ECF : API Tournoi et gestion de prêts de matériel</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="commit c-peri">
+          <span class="node" aria-hidden="true"></span>
+          <div class="box">
+            <div class="head"><span class="hash">e02d5f9</span><span class="ref">alternance</span><span>1ʳᵉ année</span></div>
+            <div class="content">
+              <h3>feat: dev web chez Montessori Store</h3>
+              <p class="where">Alternance · Montessori Store</p>
+              <ul>
+                <li>Création de MontessoriMirror, l'outil interne stocks et commandes</li>
+                <li>Connexion d'une appli Symfony à la base d'une boutique PrestaShop</li>
+                <li>Tableau de bord des ventes avec Chart.js</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="commit c-pink" style="padding-bottom:0">
+          <span class="node" aria-hidden="true"></span>
+          <div class="box">
+            <div class="head"><span class="hash">0000001</span><span class="ref">init</span></div>
+            <div class="content">
+              <h3>init: première ligne de code</h3>
+              <p>Le début de l'histoire : HTML, CSS, et l'envie de construire des choses qui servent.</p>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="section-head">
+        <h2>Mes <span class="hl">dépendances</span></h2>
+        <p>Les technologies que j'utilise, et où je les ai mises en pratique.</p>
+      </div>
+      <div class="terminal">
+        <div class="bar"><i></i><i></i><i></i><span>composer.json</span></div>
+<pre><span class="dim">{</span>
+  <span class="p">"name"</span>: <span class="y">"amine/dev-web"</span>,
+  <span class="p">"require"</span>: <span class="dim">{</span>
+    <span class="p">"php"</span>: <span class="y">"^8.3"</span>,            <span class="dim">// tous mes projets back</span>
+    <span class="p">"symfony/framework"</span>: <span class="y">"^7.4"</span>, <span class="dim">// MontessoriMirror, Candidatures, RH</span>
+    <span class="p">"doctrine/orm"</span>: <span class="y">"*"</span>,       <span class="dim">// entités, relations, migrations</span>
+    <span class="p">"api-platform"</span>: <span class="y">"*"</span>,       <span class="dim">// Badger</span>
+    <span class="p">"mysql"</span>: <span class="y">"*"</span>,              <span class="dim">// + Merise : MCD, MLD, MPD</span>
+    <span class="p">"react"</span>: <span class="y">"*"</span>,              <span class="dim">// avec TypeScript et Redux Toolkit</span>
+    <span class="p">"tailwindcss"</span>: <span class="y">"^4"</span>,       <span class="dim">// GererSesCandidatures</span>
+    <span class="p">"chart.js"</span>: <span class="y">"*"</span>            <span class="dim">// historique des ventes</span>
+  <span class="dim">}</span>,
+  <span class="p">"require-dev"</span>: <span class="dim">{</span>
+    <span class="p">"git"</span>: <span class="y">"*"</span>, <span class="p">"figma"</span>: <span class="y">"*"</span>, <span class="p">"composer"</span>: <span class="y">"*"</span>, <span class="p">"node"</span>: <span class="y">"*"</span>
+  <span class="dim">}</span>
+<span class="dim">}</span>
+<span class="k">$</span> composer install <span class="dim"># ✔ prêt à rejoindre votre équipe</span></pre>
+      </div>
+      <div class="actions">
+        <a class="btn dark" href="https://mmejjiou-boop.github.io/MonCv/" target="_blank" rel="noopener">Mon CV complet ↗</a>
+        <a class="btn" href="contact.html">Me contacter <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <span>© 2026 Mohamed Amine Mejjiou</span>
+      <a href="Projets.html">Voir les projets →</a>
+    </div>
+  </footer>
+  <script src="Main.js"></script>
+</body>
+</html>

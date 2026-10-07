@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Projets · Mohamed Amine Mejjiou</title>
+  <meta name="description" content="Les projets web de Mohamed Amine Mejjiou : Symfony, API REST, React et front.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-projets" data-route="app_projets" data-path="/projets">
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span>amine.dev</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="Projets.html" aria-current="page">Projets</a>
+        <a href="Parcours.html">Parcours</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <code class="route"><span class="a">#[Route(</span><span class="s">'/projets'</span>, name: <span class="s">'app_projets'</span><span class="a">)]</span></code>
+      <h1>Projets</h1>
+      <p>En entreprise, en formation ou juste parce que j'en avais envie. Pour chacun : la stack et ce que j'ai vraiment codé.</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section class="section">
+      <div class="section-head">
+        <div class="filters" role="group" aria-label="Filtrer les projets">
+          <button type="button" data-filter="all" aria-pressed="true">Tout</button>
+          <button type="button" data-filter="symfony" aria-pressed="false">Symfony</button>
+          <button type="button" data-filter="api" aria-pressed="false">API</button>
+          <button type="button" data-filter="front" aria-pressed="false">Front / React</button>
+        </div>
+        <span class="count">8 projets</span>
+      </div>
+
+      <div class="grid">
+        <article class="card big c-peri" data-cat="symfony">
+          <div class="top">
+            <span class="stamp">★ PROJET DE CERTIF</span>
+            <div class="meta"><span>Alternance · Montessori Store</span><span>Symfony</span></div>
+            <h3>MontessoriMirror</h3>
+          </div>
+          <div class="body">
+            <p>Outil interne de gestion des stocks et des commandes, connecté à la base MySQL de la boutique PrestaShop.</p>
+            <ul class="points">
+              <li>Connexion à PrestaShop avec schema_filter et requêtes DBAL</li>
+              <li>Contrôleurs découpés : produits, CRUD, commandes, sécurité</li>
+              <li>Authentification passée en mémoire → Doctrine</li>
+              <li>Graphique de l'historique des ventes avec Chart.js</li>
+            </ul>
+            <div class="foot"><ul class="tags"><li>Symfony</li><li>DBAL</li><li>MySQL</li><li>Chart.js</li></ul></div>
+          </div>
+        </article>
+
+        <article class="card c-sun" data-cat="symfony">
+          <div class="top">
+            <div class="meta"><span>Projet perso</span><span>Symfony</span></div>
+            <h3>GererSes­Candidatures</h3>
+          </div>
+          <div class="body">
+            <p>Pour suivre mes candidatures d'alternance, du premier mail à la réponse.</p>
+            <ul class="points">
+              <li>Statut de candidature en enum PHP</li>
+              <li>Kanban glisser-déposer (SortableJS + AJAX)</li>
+              <li>Dépôt de CV et lettre (VichUploader)</li>
+            </ul>
+            <div class="foot">
+              <ul class="tags"><li>Symfony 7.4</li><li>Tailwind 4</li><li>AssetMapper</li></ul>
+              <div class="links"><a href="https://github.com/mmejjiou-boop/GererSesCandidatures" target="_blank" rel="noopener">GitHub ↗</a></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card c-mint" data-cat="front">
+          <div class="top">
+            <div class="meta"><span>Projet perso</span><span>Front</span></div>
+            <h3>fushá</h3>
+          </div>
+          <div class="body">
+            <p>Apprendre l'alphabet arabe en français, avec une identité visuelle faite de A à Z.</p>
+            <ul class="points">
+              <li>Cartes de lettres et machine à voyelles</li>
+              <li>Prononciation par synthèse vocale</li>
+              <li>Exercices par niveau, fiches imprimables</li>
+            </ul>
+            <div class="foot">
+              <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <div class="links"><a href="https://mmejjiou-boop.github.io/arabe/index.html" target="_blank" rel="noopener">Voir le site ↗</a></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card c-tang" data-cat="symfony">
+          <div class="top">
+            <div class="meta"><span>Formation</span><span>Symfony</span></div>
+            <h3>Gestion RH</h3>
+          </div>
+          <div class="body">
+            <p>Une appli pour gérer le personnel d'une entreprise.</p>
+            <ul class="points">
+              <li>Employés et départements</li>
+              <li>Fiches de paie et demandes de congés</li>
+              <li>Attribution et suivi des tâches</li>
+            </ul>
+            <div class="foot"><ul class="tags"><li>Symfony</li><li>Doctrine</li><li>Twig</li></ul></div>
+          </div>
+        </article>
+
+        <article class="card c-pink" data-cat="symfony api">
+          <div class="top">
+            <div class="meta"><span>Examen ECF</span><span>API</span></div>
+            <h3>Tournoi</h3>
+          </div>
+          <div class="body">
+            <p>API REST pour gérer équipes, tournois et matchs.</p>
+            <ul class="points">
+              <li>HTTP Basic Auth et rôles</li>
+              <li>Service métier MatchsManager</li>
+              <li>Fixtures et migrations Doctrine</li>
+            </ul>
+            <div class="foot"><ul class="tags"><li>Symfony 7.4</li><li>REST</li><li>Security</li></ul></div>
+          </div>
+        </article>
+
+        <article class="card c-peri" data-cat="symfony api">
+          <div class="top">
+            <div class="meta"><span>Examen ECF</span><span>Back-end</span></div>
+            <h3>Prêt de matériel</h3>
+          </div>
+          <div class="body">
+            <p>Gestion des prêts de matériel aux adhérents.</p>
+            <ul class="points">
+              <li>Relations Matériel, Adhérent, Prêt</li>
+              <li>CRUD + routes API JSON</li>
+              <li>Accès par rôle avec IsGranted</li>
+            </ul>
+            <div class="foot"><ul class="tags"><li>Symfony</li><li>Doctrine</li><li>JSON</li></ul></div>
+          </div>
+        </article>
+
+        <article class="card c-sun" data-cat="front api">
+          <div class="top">
+            <div class="meta"><span>Formation</span><span>React</span></div>
+            <h3>Badger</h3>
+          </div>
+          <div class="body">
+            <p>Front React connecté à une API Platform sous Symfony.</p>
+            <ul class="points">
+              <li>Décodage JWT, affichage selon le rôle</li>
+              <li>Appels API typés en TypeScript</li>
+            </ul>
+            <div class="foot"><ul class="tags"><li>React</li><li>TypeScript</li><li>API Platform</li></ul></div>
+          </div>
+        </article>
+
+        <article class="card c-mint" data-cat="symfony">
+          <div class="top">
+            <span class="stamp">EN COURS</span>
+            <div class="meta"><span>Formation</span><span>Symfony</span></div>
+            <h3>Bibliothèque</h3>
+          </div>
+          <div class="body">
+            <p>Gestion d'une bibliothèque : lecteurs, livres et genres.</p>
+            <ul class="points">
+              <li>Entités Lecteur, Livre, Genre</li>
+              <li>Génération avec MakerBundle</li>
+            </ul>
+            <div class="foot"><ul class="tags"><li>Symfony 7</li><li>Doctrine</li><li>Twig</li></ul></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <span>© 2026 Mohamed Amine Mejjiou</span>
+      <a href="contact.html">Un projet en tête ? Contactez-moi →</a>
+    </div>
+  </footer>
+  <script src="Main.js"></script>
+</body>
+</html>

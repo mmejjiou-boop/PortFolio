@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contact · Mohamed Amine Mejjiou</title>
+  <meta name="description" content="Contacter Mohamed Amine Mejjiou pour une alternance en développement web à Orléans.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-contact" data-route="app_contact" data-path="/contact">
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span>amine.dev</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="Projets.html">Projets</a>
+        <a href="Parcours.html">Parcours</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <code class="route"><span class="a">#[Route(</span><span class="s">'/contact'</span>, methods: [<span class="s">'POST'</span>]<span class="a">)]</span></code>
+      <h1>Écris-moi.</h1>
+      <p>Une alternance, un projet, une question : je réponds vite.</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section class="section">
+      <button class="mail-big" type="button" data-copy="mmejjiou@gmail.com">
+        mmejjiou@gmail.com
+        <small data-hint>Cliquez pour copier l'adresse</small>
+      </button>
+
+      <div class="contact-grid">
+        <div class="channels">
+          <button class="channel" type="button" data-copy="0782932125">
+            <span><span class="label">Téléphone</span><br><span class="v">07 82 93 21 25</span></span>
+            <span class="label" data-hint>Copier</span>
+          </button>
+          <a class="channel" href="https://github.com/mmejjiou-boop" target="_blank" rel="noopener">
+            <span><span class="label">GitHub</span><br><span class="v">mmejjiou-boop</span></span>
+            <span class="v">↗</span>
+          </a>
+          <a class="channel" href="https://mmejjiou-boop.github.io/MonCv/" target="_blank" rel="noopener">
+            <span><span class="label">CV en ligne</span><br><span class="v">Voir mon CV</span></span>
+            <span class="v">↗</span>
+          </a>
+          <div class="channel">
+            <span><span class="label">Zone</span><br><span class="v">Orléans + 20 km</span></span>
+            <span class="v">📍</span>
+          </div>
+        </div>
+
+        <form class="contact">
+          <h2>Ou laissez un message</h2>
+          <div class="field">
+            <span class="label">C'est pour…</span>
+            <div class="chips">
+              <input type="radio" id="s1" name="sujet" value="Proposition d'alternance" checked><label for="s1">Une alternance</label>
+              <input type="radio" id="s2" name="sujet" value="Projet web"><label for="s2">Un projet web</label>
+              <input type="radio" id="s3" name="sujet" value="Autre"><label for="s3">Autre chose</label>
+            </div>
+          </div>
+          <div class="two">
+            <div class="field"><label for="nom">Nom</label><input id="nom" name="nom" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="entreprise">Entreprise</label><input id="entreprise" name="entreprise" type="text" autocomplete="organization"></div>
+          </div>
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+          <button class="btn dark" type="submit">Envoyer <span class="arrow">→</span></button>
+          <p class="form-note">// ouvre votre messagerie avec le message prêt</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <span>© 2026 Mohamed Amine Mejjiou</span>
+      <a href="index.html">Retour à l'accueil</a>
+    </div>
+  </footer>
+  <script src="Main.js"></script>
+</body>
+</html>
